@@ -360,3 +360,66 @@ button[type="submit"]:hover {
         padding: 10px 2vw;
     }
 }
+@media (max-width: 600px) {
+
+    .container-formulario,
+    .dados-pessoais-container {
+        max-width: 98vw;
+        width: 98vw;
+        padding: 8px;
+        border-radius: 10px;
+        margin: 10px auto;
+    }
+
+    .site-logo-form01 {
+        width: 90vw;
+        max-width: 220px;
+        height: auto;
+        padding-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .form-centro {
+        width: 100%;
+        padding: 0;
+    }
+
+    .campo-form {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    input[type="date"],
+    input[type="number"] {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        font-size: 1em;
+        padding: 10px 0;
+        margin-top: 10px;
+    }
+
+    .botoes-navegacao-inferior {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        bottom: 10px;
+        gap: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .botoes-navegacao-inferior .botao-nav {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: 1em;
+    }
+}
