@@ -261,7 +261,169 @@ input[type="number"] {
 }
 
 button[type="submit"] {
-    background-color: #dcdcdc;
+    background-color: #dcdcdc;    /* --- OTIMIZAÇÕES MOBILE --- */
+    @media (max-width: 768px) {
+        /* Tablets e dispositivos médios */
+        .container-formulario {
+            width: 90vw;
+            max-width: 90vw;
+            padding: 20px;
+        }
+    
+        .site-logo-form01 {
+            width: 60vw;
+            max-width: 200px;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        /* Smartphones */
+        body.pagina-de-formulario {
+            padding: 0 0 75px 0;
+        }
+    
+        .main-header {
+            display: none;
+        }
+    
+        .site-logo-form01 {
+            width: 50vw;
+            max-width: 180px;
+            margin: 20px auto 15px;
+            padding-top: 0;
+        }
+    
+        .container-formulario {
+            width: 95vw;
+            max-width: 95vw;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 20px;
+        }
+    
+        .dados-pessoais-container {
+            padding: 15px;
+        }
+    
+        .titulo-dados {
+            font-size: 1.1em;
+            margin: 5px 0 15px;
+        }
+    
+        .campo-form label {
+            font-size: 1em;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            font-size: 16px; /* Evita zoom automático no iOS */
+            padding: 8px;
+        }
+    
+        .botoes-navegacao-inferior {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(0,0,0,0.9);
+            flex-direction: column;
+            gap: 8px;
+        }
+    
+        .botoes-navegacao-inferior .botao-nav {
+            width: 100%;
+            margin: 0;
+            font-size: 0.9em;
+        }
+    
+        .rodape {
+            font-size: 0.8em;
+            padding: 8px;
+        }
+    }    /* --- OTIMIZAÇÕES MOBILE --- */
+    @media (max-width: 768px) {
+        /* Tablets e dispositivos médios */
+        .container-formulario {
+            width: 90vw;
+            max-width: 90vw;
+            padding: 20px;
+        }
+    
+        .site-logo-form01 {
+            width: 60vw;
+            max-width: 200px;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        /* Smartphones */
+        body.pagina-de-formulario {
+            padding: 0 0 75px 0;
+        }
+    
+        .main-header {
+            display: none;
+        }
+    
+        .site-logo-form01 {
+            width: 50vw;
+            max-width: 180px;
+            margin: 20px auto 15px;
+            padding-top: 0;
+        }
+    
+        .container-formulario {
+            width: 95vw;
+            max-width: 95vw;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 20px;
+        }
+    
+        .dados-pessoais-container {
+            padding: 15px;
+        }
+    
+        .titulo-dados {
+            font-size: 1.1em;
+            margin: 5px 0 15px;
+        }
+    
+        .campo-form label {
+            font-size: 1em;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            font-size: 16px; /* Evita zoom automático no iOS */
+            padding: 8px;
+        }
+    
+        .botoes-navegacao-inferior {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(0,0,0,0.9);
+            flex-direction: column;
+            gap: 8px;
+        }
+    
+        .botoes-navegacao-inferior .botao-nav {
+            width: 100%;
+            margin: 0;
+            font-size: 0.9em;
+        }
+    
+        .rodape {
+            font-size: 0.8em;
+            padding: 8px;
+        }
+    }
     color: #000000;
     border: none;
     padding: 12px 30px;
@@ -531,5 +693,89 @@ button[type="submit"]:hover {
         /* Para centralizar o texto verticalmente se ele não preencher a altura */
         align-items: center;
         justify-content: center;
+    }
+/* --- OTIMIZAÇÕES MOBILE --- */
+@media (max-width: 768px) {
+
+    /* Tablets e dispositivos médios */
+    .container-formulario {
+        width: 90vw;
+        max-width: 90vw;
+        padding: 20px;
+    }
+
+    .site-logo-form01 {
+        width: 60vw;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Smartphones */
+    body.pagina-de-formulario {
+        padding: 0 0 75px 0;
+    }
+
+    .main-header {
+        display: none;
+    }
+
+    .site-logo-form01 {
+        width: 50vw;
+        max-width: 180px;
+        margin: 20px auto 15px;
+        padding-top: 0;
+    }
+
+    .container-formulario {
+        width: 95vw;
+        max-width: 95vw;
+        margin: 10px auto;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .dados-pessoais-container {
+        padding: 15px;
+    }
+
+    .titulo-dados {
+        font-size: 1.1em;
+        margin: 5px 0 15px;
+    }
+
+    .campo-form label {
+        font-size: 1em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        font-size: 16px;
+        /* Evita zoom automático no iOS */
+        padding: 8px;
+    }
+
+    .botoes-navegacao-inferior {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .botoes-navegacao-inferior .botao-nav {
+        width: 100%;
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .rodape {
+        font-size: 0.8em;
+        padding: 8px;
     }
 }
