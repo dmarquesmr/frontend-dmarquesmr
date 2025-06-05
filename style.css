@@ -716,6 +716,31 @@ button[type="submit"]:hover {
     body.pagina-de-formulario {
         padding: 0 0 75px 0;
     }
+        /* Smartphones */
+        .site-logo-pagina1 {
+            height: auto;
+            /* Altura automática para manter proporção */
+            width: 80%;
+            /* Largura responsiva */
+            max-width: 250px;
+            /* Largura máxima */
+            padding-top: 20px;
+            /* Reduz o padding superior */
+            margin: 0 auto;
+            /* Centraliza horizontalmente */
+            display: block;
+            /* Garante que seja bloco */
+        }
+                .main-header {
+                    height: auto;
+                    /* Altura automática */
+                    min-height: 80px;
+                    /* Altura mínima para o header */
+                    position: relative;
+                    /* Muda para relative em mobile */
+                    padding: 10px;
+                    /* Reduz o padding */
+                }   }
 
     .main-header {
         display: none;
