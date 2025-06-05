@@ -12,10 +12,7 @@ body {
     box-sizing: border-box;
     background: #f0f0f0 url('5026563.jpg') no-repeat center center/cover;
     background-attachment: fixed;
-
 }
-
-
 
 .rodape {
     position: fixed;
@@ -144,8 +141,6 @@ body.pagina-de-formulario {
     margin: 0 auto 25px auto;
     /* Mais margem inferior */
 }
-
-
 
 .container-formulario {
     background-color: #dcdcdc;
@@ -299,36 +294,28 @@ button[type="submit"]:hover {
 /* --- OTIMIZAÇÕES PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 600PX) --- */
 
 @media (max-width: 600px) {
-
-    
     body.pagina-de-formulario {
         padding-bottom: 75px;
     }
 
-    
     body:not(.pagina-de-formulario) {
         padding-top: 70px;
-        
-        
     }
-
-   
 
     body.pagina-de-formulario .main-header {
         display: none;
-        
     }
 
     /* Logo na Index.html Mobile */
     .site-logo-pagina1 {
         display: block;
-            margin: 80px auto 40px auto;
-            max-width: 420px;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border: none;
-            padding-top: 10px;
+        margin: 80px auto 40px auto;
+        max-width: 420px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border: none;
+        padding-top: 10px;
     }
 
     /* Conteúdo Principal da Index.html Mobile */
@@ -369,15 +356,13 @@ button[type="submit"]:hover {
         padding: 12px 10px;
         color: rgb(255, 255, 255);
         background-color: rgb(0, 0, 0);
-     
     }
 
     /* Logo no Formulário (form01.html) Mobile */
     .site-logo-form01 {
         width: 100%;
-        max-width: 600px
+        max-width: 600px;
         margin: 10px auto 15px auto;
-        
     }
 
     /* Container do Formulário (form01.html) Mobile */
@@ -395,7 +380,6 @@ button[type="submit"]:hover {
     .dados-pessoais-container {
         width: 100%;
         padding: 15px 10px;
-
         margin-bottom: 20px;
         border-radius: 10px;
     }
@@ -424,7 +408,6 @@ button[type="submit"]:hover {
         padding: 14px 15px;
         font-size: 1.05em;
         margin-top: 15px;
-
     }
 
     /* Botões de Navegação Inferior (form01.html) Mobile */
@@ -441,11 +424,9 @@ button[type="submit"]:hover {
         justify-content: space-between;
         gap: 5px;
         z-index: 1001;
-        
     }
 
     .botoes-navegacao-inferior .botao-nav {
-        
         color: #ffffff;
         padding: 10px 5px;
         font-size: 0.65em;
@@ -462,35 +443,32 @@ button[type="submit"]:hover {
         align-items: center;
         justify-content: center;
         border: none;
-        
-    
     }
 
     /* Rodapé Mobile */
     .rodape {
         position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 300px;
-            /* Um pouco menor */
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            /* Fundo escuro do rodapé */
-            border-radius: 20px 20px 0 0;
-            padding: 8px 0;
-            font-size: 0.85em;
-            color: #ffffff;
-            z-index: 999;
-            /* Abaixo dos botões de navegação mobile (1001) */
-            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
-            box-sizing: border-box;
-        }
-        
-        .rodape p {
-            margin: 0;
-       
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 300px;
+        /* Um pouco menor */
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        /* Fundo escuro do rodapé */
+        border-radius: 20px 20px 0 0;
+        padding: 8px 0;
+        font-size: 0.85em;
+        color: #ffffff;
+        z-index: 999;
+        /* Abaixo dos botões de navegação mobile (1001) */
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+    }
+    
+    .rodape p {
+        margin: 0;
     }
 
     body.pagina-de-formulario .rodape {
