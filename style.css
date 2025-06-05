@@ -250,45 +250,48 @@ button[type="submit"]:hover {
 }
 
 .botoes-navegacao-inferior {
-    position: fixed;
-    bottom: 150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 420px;
-    /* igual ao conteúdo principal */
-    padding: 10px 8px;
+    position: static;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    max-width: 95vw;
+    width: 95%;
+    padding: 15px 10px;
+    margin: 20px auto 60px auto;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    gap: 8px;
+    gap: 10px;
     z-index: 1001;
+    background-color: rgba(220, 220, 220, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .botoes-navegacao-inferior .botao-nav {
-    /* Desktop */
-    background-color: #2a2a2a;
-    color: #f0f0f0;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 0.9em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Fonte mais consistente */
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.25s ease-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-    text-decoration: none;
-    text-align: center;
+    color: #ffffff;
+    padding: 12px 15px;
+    font-size: 0.8em;
+    flex-basis: 0;
     flex-grow: 1;
+    width: auto;
+    margin: 0;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 1.4;
+    white-space: normal;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #2a2a2a;
+    transition: all 0.3s ease;
 }
 
 .botoes-navegacao-inferior .botao-nav:hover {
     background-color: #444444;
-    color: #ffffff;
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 /* --- OTIMIZAÇÕES PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 600PX) --- */
@@ -408,41 +411,6 @@ button[type="submit"]:hover {
         padding: 14px 15px;
         font-size: 1.05em;
         margin-top: 15px;
-    }
-
-    /* Botões de Navegação Inferior (form01.html) Mobile */
-    .botoes-navegacao-inferior {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 100%;
-        width: 100%;
-        padding: 10px 8px;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
-        gap: 5px;
-        z-index: 1001;
-    }
-
-    .botoes-navegacao-inferior .botao-nav {
-        color: #ffffff;
-        padding: 10px 5px;
-        font-size: 0.65em;
-        flex-basis: 0;
-        flex-grow: 1;
-        width: auto;
-        margin: 0;
-        border-radius: 6px;
-        text-align: center;
-        line-height: 1.3;
-        white-space: normal;
-        min-height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
     }
 
     /* Rodapé Mobile */
