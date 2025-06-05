@@ -315,3 +315,48 @@ button[type="submit"]:hover {
     color: #ffffff;
     transform: translateY(-2px);
 }
+@media (max-width: 600px) {
+
+    .container-formulario,
+    .dados-pessoais-container {
+        max-width: 98%;
+        width: 98%;
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .site-logo-pagina1,
+    .site-logo-form01 {
+        width: 90vw;
+        height: auto;
+        max-width: 300px;
+        padding-top: 40px;
+    }
+
+    .botoes-navegacao-inferior {
+        flex-direction: column;
+        width: 98%;
+        max-width: 98%;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+    }
+
+    .botoes-navegacao-inferior .botao-nav {
+        max-width: 100%;
+        width: 100%;
+        margin: 5px 0;
+        font-size: 1em;
+    }
+
+    h2,
+    .titulo-dados {
+        font-size: 1em;
+        padding: 0 5px;
+    }
+
+    .pagina-background-principal {
+        padding: 10px 2vw;
+    }
+}
