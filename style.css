@@ -10,7 +10,6 @@ body {
     min-height: 100vh;
     box-sizing: border-box;
     background: #f0f0f0 url('5026563.jpg') no-repeat center center/cover;
-    
 }
 
 .main-header {
@@ -27,7 +26,7 @@ body {
     align-items: center;
 }
 
-.logo-link {
+.logo-link { /* Embora não usado no form01.html header, mantido para index.html se necessário */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -46,7 +45,7 @@ body {
     padding: 10px 0;
     font-size: 0.9em;
     color: #dcdcdc;
-    z-index: 100;
+    z-index: 100; /* Deve ser menor que o z-index dos botões de navegação se eles estiverem fixos e houver sobreposição */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
 }
@@ -63,16 +62,19 @@ li {
 
 /* --- ESTILOS PARA INDEX.HTML --- */
 .site-logo-pagina1 {
-    height: 400px;
-    width: 400px;
-    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    /* Aumentado de 90px para 160px */
+    width: auto;
+    max-width: 500px;
+    /* Aumentado de 300px para 500px */
     display: block;
-    padding-top: 250px;
+    padding-top: 400px; /* Espaço para o header fixo */
 }
-
 .pagina-background-principal {
     text-align: center;
     padding: 20px;
+    margin-top: 140px; /* Para compensar o header fixo */
 }
 
 h2 {
@@ -83,30 +85,19 @@ h2 {
     font-size: 1.1em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
-    
-
 }
+
 .navegacao-formularios ul {
     padding: 0;
     list-style-type: none;
     margin-top: 10px;
     box-sizing: border-box;
-    
-    
 }
 
 .navegacao-formularios li {
-    margin-bottom: 8px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: #000000 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background-color: none;
-    
-    
-    
-  
-    
-   
+    margin-bottom: 18px;
+    /* Removido padding e background do LI, aplicando diretamente no A para melhor área de clique */
+    border-radius: 5px; /* Mantido no LI se desejar um contorno no item todo */
 }
 
 .navegacao-formularios a {
@@ -114,60 +105,41 @@ h2 {
     color: #333;
     padding: 13px;
     border-radius: 15px;
-    max-width: 900px;
+    max-width: 900px; /* Considerar se este max-width é realmente necessário */
     margin: 0 auto;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: normal;
     font-weight: bold;
     font-size: 1.2em;
     display: block;
     text-align: center;
-    box-shadow: #000000 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     background-color: #d4d4d4;
-    
-   
 }
 
 .navegacao-formularios a:hover {
-    color: #393939;
-    background-color: #e0e0e0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    transform: translateY(-2px);
-    font-weight: bold;
-    font-size: 1.3em;
-    text-decoration: none;
-    box-shadow: 0 0 15px rgba(208, 255, 253, 0.6);
-    background-color: #ffffff;
     color: #000000;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    font-size: 1.2em;
-    
-
-    
-    
-
-    
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra mais sutil no hover */
+    transform: translateY(-2px);
+    /* font-size mantido para evitar repetição da declaração base */
 }
 
-
 /* --- ESTILOS PARA FORM01.HTML --- */
-.pagina-formulario {
-    background-color: #ffffff;
-    background-image: none;
+body.pagina-de-formulario { /* Adicionado para padding do header apenas se necessário */
+    /* padding-top: 110px;  Se o .main-header for usado ativamente no form01.html */
+    /* Se o .main-header for display:none no mobile, esse padding-top também deverá ser 0 no mobile */
 }
 
 .site-logo-form01 {
-    height: 300px;
-    width: 300px;
-    max-width: 300px;
+    height: auto; /* Altura automática */
+    width: 200px; /* Tamanho base da logo */
+    max-width: 60%; /* Máximo da largura do container do formulário */
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px auto; /* Centralizada com margem inferior */
 }
 
-h1 {
+h1 { /* Estilo genérico para H1, se usado */
     color: #c0c0c0;
     background-color: #240f0f;
     padding: 5px;
@@ -182,17 +154,18 @@ h1 {
 .container-formulario {
     background-color: #dcdcdc;
     padding: 20px;
-    padding-bottom: 180px;
+    padding-bottom: 100px; /* Espaço para botões absolute em desktop. Será ajustado em mobile. */
     border-radius: 30px;
     box-shadow: 0 0 10px #555;
     max-width: 600px;
     width: 90%;
     margin: 20px auto;
+    margin-top: 130px; /* Para compensar o header fixo de 110px + um pouco de espaço */
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    position: relative;
+    position: relative; /* Para .botoes-navegacao-inferior em desktop */
 }
 
 .titulo-dados {
@@ -212,7 +185,7 @@ h1 {
     width: 90%;
     max-width: 450px;
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* Reduzido um pouco */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,169 +234,7 @@ input[type="number"] {
 }
 
 button[type="submit"] {
-    background-color: #dcdcdc;    /* --- OTIMIZAÇÕES MOBILE --- */
-    @media (max-width: 768px) {
-        /* Tablets e dispositivos médios */
-        .container-formulario {
-            width: 90vw;
-            max-width: 90vw;
-            padding: 20px;
-        }
-    
-        .site-logo-form01 {
-            width: 60vw;
-            max-width: 200px;
-        }
-    }
-    
-    @media (max-width: 600px) {
-        /* Smartphones */
-        body.pagina-de-formulario {
-            padding: 0 0 75px 0;
-        }
-    
-        .main-header {
-            display: none;
-        }
-    
-        .site-logo-form01 {
-            width: 50vw;
-            max-width: 180px;
-            margin: 20px auto 15px;
-            padding-top: 0;
-        }
-    
-        .container-formulario {
-            width: 95vw;
-            max-width: 95vw;
-            margin: 10px auto;
-            padding: 15px;
-            border-radius: 20px;
-        }
-    
-        .dados-pessoais-container {
-            padding: 15px;
-        }
-    
-        .titulo-dados {
-            font-size: 1.1em;
-            margin: 5px 0 15px;
-        }
-    
-        .campo-form label {
-            font-size: 1em;
-        }
-    
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"] {
-            font-size: 16px; /* Evita zoom automático no iOS */
-            padding: 8px;
-        }
-    
-        .botoes-navegacao-inferior {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background: rgba(0,0,0,0.9);
-            flex-direction: column;
-            gap: 8px;
-        }
-    
-        .botoes-navegacao-inferior .botao-nav {
-            width: 100%;
-            margin: 0;
-            font-size: 0.9em;
-        }
-    
-        .rodape {
-            font-size: 0.8em;
-            padding: 8px;
-        }
-    }    /* --- OTIMIZAÇÕES MOBILE --- */
-    @media (max-width: 768px) {
-        /* Tablets e dispositivos médios */
-        .container-formulario {
-            width: 90vw;
-            max-width: 90vw;
-            padding: 20px;
-        }
-    
-        .site-logo-form01 {
-            width: 60vw;
-            max-width: 200px;
-        }
-    }
-    
-    @media (max-width: 600px) {
-        /* Smartphones */
-        body.pagina-de-formulario {
-            padding: 0 0 75px 0;
-        }
-    
-        .main-header {
-            display: none;
-        }
-    
-        .site-logo-form01 {
-            width: 50vw;
-            max-width: 180px;
-            margin: 20px auto 15px;
-            padding-top: 0;
-        }
-    
-        .container-formulario {
-            width: 95vw;
-            max-width: 95vw;
-            margin: 10px auto;
-            padding: 15px;
-            border-radius: 20px;
-        }
-    
-        .dados-pessoais-container {
-            padding: 15px;
-        }
-    
-        .titulo-dados {
-            font-size: 1.1em;
-            margin: 5px 0 15px;
-        }
-    
-        .campo-form label {
-            font-size: 1em;
-        }
-    
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"] {
-            font-size: 16px; /* Evita zoom automático no iOS */
-            padding: 8px;
-        }
-    
-        .botoes-navegacao-inferior {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background: rgba(0,0,0,0.9);
-            flex-direction: column;
-            gap: 8px;
-        }
-    
-        .botoes-navegacao-inferior .botao-nav {
-            width: 100%;
-            margin: 0;
-            font-size: 0.9em;
-        }
-    
-        .rodape {
-            font-size: 0.8em;
-            padding: 8px;
-        }
-    }
+    background-color: #dcdcdc;
     color: #000000;
     border: none;
     padding: 12px 30px;
@@ -442,25 +253,25 @@ button[type="submit"]:hover {
     box-shadow: 0 0 15px rgba(255, 216, 216, 0.6);
 }
 
-.botoes-navegacao-inferior {
+.botoes-navegacao-inferior { /* Estilos Desktop */
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 80px);
-    max-width: 500px;
+    width: calc(100% - 80px); /* Para caber dentro do padding do container-formulario */
+    max-width: calc(600px - 80px); /* Considera max-width do pai */
     display: flex;
     justify-content: space-between;
+    gap: 10px; /* Adicionado gap para desktop também */
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.botoes-navegacao-inferior .botao-nav {
+.botoes-navegacao-inferior .botao-nav { /* Estilos Desktop */
     background-color: #0f0f0f;
     color: #ffffff;
     border: none;
     padding: 12px 15px;
-    margin: 0 5px;
     border-radius: 10px;
     font-size: 1em;
     cursor: pointer;
@@ -469,270 +280,80 @@ button[type="submit"]:hover {
     text-decoration: none;
     text-align: center;
     flex-grow: 1;
-    max-width: 48%;
+    /* max-width não é necessário com flex-grow e gap, eles se ajustarão */
 }
 
 .botoes-navegacao-inferior .botao-nav:hover {
     background-color: #333333;
-    color: #ffffff;
     transform: translateY(-2px);
 }
-@media (max-width: 600px) {
 
-    .container-formulario,
-    .dados-pessoais-container {
-        max-width: 98%;
-        width: 98%;
-        padding: 10px;
-        border-radius: 12px;
-    }
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
 
-    .site-logo-pagina1,
-    .site-logo-form01 {
+/* Regras para tablets e dispositivos médios (opcional, pode ajustar ou remover se não necessário) */
+@media (max-width: 768px) {
+    .container-formulario {
         width: 90vw;
-        height: auto;
-        max-width: 300px;
-        padding-top: 40px;
-    }
-
-    .botoes-navegacao-inferior {
-        flex-direction: column;
-        width: 98%;
-        max-width: 98%;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        gap: 10px;
-    }
-
-    .botoes-navegacao-inferior .botao-nav {
-        max-width: 100%;
-        width: 100%;
-        margin: 5px 0;
-        font-size: 1em;
-    }
-
-    h2,
-    .titulo-dados {
-        font-size: 1em;
-        padding: 0 5px;
-    }
-
-    .pagina-background-principal {
-        padding: 10px 2vw;
-    }
-}
-@media (max-width: 600px) {
-
-    .container-formulario,
-    .dados-pessoais-container {
-        max-width: 98vw;
-        width: 98vw;
-        padding: 8px;
-        border-radius: 10px;
-        margin: 10px auto;
+        margin-top: 120px; /* Ajuste para header */
     }
 
     .site-logo-form01 {
-        width: 90vw;
-        max-width: 220px;
-        height: auto;
-        padding-top: 20px;
-        margin-bottom: 10px;
+        width: 180px; /* Reduz um pouco para tablets */
     }
 
-    .form-centro {
-        width: 100%;
-        padding: 0;
-    }
-
-    .campo-form {
-        margin-bottom: 10px;
-        width: 100%;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="password"],
-    input[type="date"],
-    input[type="number"] {
-        font-size: 1em;
-        padding: 8px;
-    }
-
-    button[type="submit"] {
-        width: 100%;
-        font-size: 1em;
-        padding: 10px 0;
-        margin-top: 10px;
-    }
-
-    .botoes-navegacao-inferior {
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-        bottom: 10px;
-        gap: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .botoes-navegacao-inferior .botao-nav {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        font-size: 1em;
+    .dados-pessoais-container {
+        width: 95%;
     }
 }
-/* --- OTIMIZAÇÕES MOBILE COMPLETAS PARA FORM01.HTML --- */
 
+/* Regras para Smartphones (onde a otimização principal acontece) */
 @media (max-width: 600px) {
     body.pagina-de-formulario {
-        padding-top: 0;
-        padding-bottom: 75px;
-        /* Ajustado para a altura da barra de botões */
+        padding-top: 0; /* Remove padding do topo se header for oculto */
+        padding-bottom: 70px; /* Espaço para os botões de navegação fixos na parte inferior */
     }
 
     body.pagina-de-formulario .main-header {
-        display: none;
-        /* Remove completamente o header vazio do fluxo e da visualização */
+        display: none; /* Remove completamente o header principal no form01.html em mobile */
+    }
+
+    .container-formulario {
+        width: 95vw; /* Usa quase toda a largura da viewport */
+        margin-top: 15px; /* Pequena margem no topo */
+        margin-bottom: 15px; /* Pequena margem no fundo (body terá o padding maior) */
+        padding: 15px; /* Padding interno geral */
+        padding-bottom: 20px; /* Padding inferior normal, botões de navegação são fixos na viewport */
+        border-radius: 20px;
+        
     }
 
     .site-logo-form01 {
-        width: 50vw;
-        max-width: 180px;
+        width: 55vw; /* Logo um pouco menor */
+        max-width: 160px; /* Limite máximo */
         height: auto;
-        margin: 20px auto 15px auto;
-        /* Adiciona um pouco de margem no topo */
+        margin: 10px auto 15px auto; /* Margens ajustadas */
         padding-top: 0;
     }
 
-    .container-formulario {
-        width: 95vw;
-        max-width: 95vw;
-        margin-top: 10px;
-        /* Margem superior do container principal do formulário */
-        margin-bottom: 10px;
-        padding: 15px;
-        padding-bottom: 20px;
-        /* Padding inferior normal */
-        border-radius: 20px;
-    }
-
     .titulo-dados {
-        font-size: 1.1em;
-        margin-top: 5px;
+        font-size: 1.15em;
+        margin-top: 0;
         margin-bottom: 15px;
     }
 
-    .dados-pessoais-container {
-        width: 100%;
-        padding: 15px;
-        /* Reduzido um pouco o padding */
-        margin-bottom: 20px;
-        border-radius: 10px;
-        /* Borda um pouco menor */
-    }
+        .dados-pessoais-container {
+            width: 90%;
+            /* Reduzido de 100% para 90% */
+            padding: 15px;
+            /* Reduzido de 20px para 15px */
+            margin: 10px auto;
+            /* Centraliza o container */
+            border-radius: 12px;
+            /* Reduz um pouco o arredondamento */
+            min-height: auto;
+            /* Remove altura mínima fixa */
+        }
 
-    .campo-form {
-        margin-bottom: 10px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
-        padding: 10px;
-        font-size: 0.95em;
-    }
-
-    button[type="submit"] {
-        width: 100%;
-        padding: 12px 15px;
-        font-size: 1em;
-        margin-top: 15px;
-    }
-
-    .botoes-navegacao-inferior {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #DFDFDF;
-        /* Fundo um pouco mais claro para os botões */
-        padding: 8px;
-        /* Padding geral da barra */
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
-        gap: 8px;
-        border-top: 1px solid #C0C0C0;
-        z-index: 100;
-    }
-
-    .botoes-navegacao-inferior .botao-nav {
-        background-color: #383838;
-        color: #ffffff;
-        padding: 8px 5px;
-        /* Padding vertical e horizontal reduzidos */
-        font-size: 0.8em;
-        /* Fonte reduzida para caber o texto */
-        flex-grow: 1;
-        max-width: none;
-        width: auto;
-        margin: 0;
-        border-radius: 5px;
-        text-align: center;
-        line-height: 1.25;
-        /* Permite quebra de linha se necessário, com espaçamento adequado */
-        white-space: normal;
-        /* Garante que o texto possa quebrar */
-        min-height: 38px;
-        /* Altura mínima para acomodar duas linhas se preciso */
-        display: flex;
-        /* Para centralizar o texto verticalmente se ele não preencher a altura */
-        align-items: center;
-        justify-content: center;
-    }
-/* Remova todas as media queries anteriores e use apenas esta */
-@media (max-width: 600px) {
-
-    /* Ajustes Gerais */
-    body {
-        padding-bottom: 80px;
-        /* Espaço para os botões fixos */
-    }
-
-    /* Header e Logo */
-    .main-header {
-        height: auto;
-        min-height: 60px;
-        position: relative;
-    }
-
-    .site-logo-pagina1 {
-        height: auto;
-        width: 80%;
-        max-width: 200px;
-        padding-top: 20px;
-        margin: 0 auto;
-    }
-
-    /* Containers */
-    .container-formulario {
-        width: 92%;
-        margin: 10px auto;
-        padding: 15px;
-        border-radius: 15px;
-    }
-
-    .dados-pessoais-container {
-        width: 100%;
-        padding: 15px;
-        margin: 10px 0;
-    }
-
-    /* Campos do Formulário */
     .campo-form {
         margin-bottom: 12px;
     }
@@ -740,40 +361,54 @@ button[type="submit"]:hover {
     input[type="text"],
     input[type="email"],
     input[type="tel"] {
-        font-size: 16px;
-        padding: 10px;
-        width: 100%;
+        padding: 12px 10px;
+        font-size: 16px; /* Evita zoom automático no iOS */
     }
 
-    /* Botões de Navegação */
-    .botoes-navegacao-inferior {
-        position: fixed;
-        bottom: 0;
-        left: 0;
+    button[type="submit"] { /* Botão Enviar */
         width: 100%;
-        padding: 8px;
-        background: rgba(0, 0, 0, 0.95);
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        z-index: 1000;
+        padding: 12px 15px;
+        font-size: 1.05em; /* Levemente maior para destaque */
+        margin-top: 15px;
     }
 
-    .botoes-navegacao-inferior .botao-nav {
-        width: 100%;
-        margin: 0;
-        padding: 10px;
-        font-size: 0.9em;
-        border-radius: 5px;
-    }
+        .botoes-navegacao-inferior {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: row;
+            /* Garante lado a lado */
+            justify-content: center;
+            /* Centraliza os botões */
+            gap: 8px;
+            /* Espaço entre eles */
+            z-index: 1000;
+        }
 
-    /* Rodapé */
-    .rodape {
-        bottom: 85px;
-        /* Posiciona acima dos botões */
-        font-size: 0.8em;
-        padding: 8px;
-        border-radius: 15px 15px 0 0;
-        z-index: 999;
+                .botoes-navegacao-inferior .botao-nav {
+                    flex: 1 1 0;
+                    /* Divide igualmente o espaço */
+                    width: auto;
+                    /* Remove largura fixa */
+                    max-width: none;
+                    /* Remove limite */
+                    font-size: 0.95em;
+                    padding: 10px 0;
+                    margin: 0;
+                    white-space: nowrap;
+                    text-align: center; 
+                  }
+
+    .rodape { /* Ajuste no rodapé para não sobrepor a barra de botões mobile */
+        /* Se o rodapé também for fixo, ele precisa ser posicionado acima da barra de botões ou oculto */
+        /* Exemplo: Ocultar rodapé em telas muito pequenas se não houver espaço */
+        /* display: none; */
+        /* Ou ajustar o 'bottom' se a barra de botões tiver altura X: bottom: X + 5px; */
+        /* Para este caso, vamos dar z-index menor e ele ficará atrás. */
+        z-index: 99;
     }
 }
