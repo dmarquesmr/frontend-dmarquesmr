@@ -317,6 +317,7 @@ button[type="submit"]:hover {
 
     body.pagina-de-formulario .main-header {
         display: none; /* Remove completamente o header principal no form01.html em mobile */
+        position: fixed;
     }
 
     .container-formulario {
@@ -386,7 +387,7 @@ button[type="submit"]:hover {
             position: fixed;
             bottom: 0;
             left: 0;
-            width: 100%;
+            width: 300px;
             padding: 8px;
             background: rgba(0, 0, 0, 0.9);
             display: flex;
@@ -403,8 +404,8 @@ button[type="submit"]:hover {
                     /* Divide igualmente o espaço */
                     min-width: 0;
                     /* Permite encolher */
-                    max-width: 100%;
-                    width: 100%;
+                    max-width: 300px;
+                    width: 300px;
                     font-size: 1em;
                     padding: 12px 0;
                     margin: 0;
