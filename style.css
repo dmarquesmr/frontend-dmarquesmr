@@ -694,113 +694,86 @@ button[type="submit"]:hover {
         align-items: center;
         justify-content: center;
     }
-/* --- OTIMIZAÇÕES MOBILE --- */
-@media (max-width: 768px) {
-
-    /* Tablets e dispositivos médios */
-    .container-formulario {
-        width: 90vw;
-        max-width: 90vw;
-        padding: 20px;
-    }
-
-    .site-logo-form01 {
-        width: 60vw;
-        max-width: 200px;
-    }
-}
-
+/* Remova todas as media queries anteriores e use apenas esta */
 @media (max-width: 600px) {
 
-    /* Smartphones */
-    body.pagina-de-formulario {
-        padding: 0 0 75px 0;
+    /* Ajustes Gerais */
+    body {
+        padding-bottom: 80px;
+        /* Espaço para os botões fixos */
     }
-        /* Smartphones */
-        .site-logo-pagina1 {
-            height: auto;
-            /* Altura automática para manter proporção */
-            width: 80%;
-            /* Largura responsiva */
-            max-width: 250px;
-            /* Largura máxima */
-            padding-top: 20px;
-            /* Reduz o padding superior */
-            margin: 0 auto;
-            /* Centraliza horizontalmente */
-            display: block;
-            /* Garante que seja bloco */
-        }
-                .main-header {
-                    height: auto;
-                    /* Altura automática */
-                    min-height: 80px;
-                    /* Altura mínima para o header */
-                    position: relative;
-                    /* Muda para relative em mobile */
-                    padding: 10px;
-                    /* Reduz o padding */
-                }   }
 
+    /* Header e Logo */
     .main-header {
-        display: none;
+        height: auto;
+        min-height: 60px;
+        position: relative;
     }
 
-    .site-logo-form01 {
-        width: 50vw;
-        max-width: 180px;
-        margin: 20px auto 15px;
-        padding-top: 0;
+    .site-logo-pagina1 {
+        height: auto;
+        width: 80%;
+        max-width: 200px;
+        padding-top: 20px;
+        margin: 0 auto;
     }
 
+    /* Containers */
     .container-formulario {
-        width: 95vw;
-        max-width: 95vw;
+        width: 92%;
         margin: 10px auto;
         padding: 15px;
-        border-radius: 20px;
+        border-radius: 15px;
     }
 
     .dados-pessoais-container {
+        width: 100%;
         padding: 15px;
+        margin: 10px 0;
     }
 
-    .titulo-dados {
-        font-size: 1.1em;
-        margin: 5px 0 15px;
-    }
-
-    .campo-form label {
-        font-size: 1em;
+    /* Campos do Formulário */
+    .campo-form {
+        margin-bottom: 12px;
     }
 
     input[type="text"],
     input[type="email"],
     input[type="tel"] {
         font-size: 16px;
-        /* Evita zoom automático no iOS */
-        padding: 8px;
+        padding: 10px;
+        width: 100%;
     }
 
+    /* Botões de Navegação */
     .botoes-navegacao-inferior {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.9);
+        padding: 8px;
+        background: rgba(0, 0, 0, 0.95);
+        display: flex;
         flex-direction: column;
         gap: 8px;
+        z-index: 1000;
     }
 
     .botoes-navegacao-inferior .botao-nav {
         width: 100%;
         margin: 0;
+        padding: 10px;
         font-size: 0.9em;
+        border-radius: 5px;
     }
 
+    /* Rodapé */
     .rodape {
+        bottom: 85px;
+        /* Posiciona acima dos botões */
         font-size: 0.8em;
         padding: 8px;
+        border-radius: 15px 15px 0 0;
+        z-index: 999;
     }
 }
