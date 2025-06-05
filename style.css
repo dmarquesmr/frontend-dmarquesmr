@@ -81,7 +81,7 @@ h2 {
     color: #060606;
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     font-size: 1.1em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
@@ -127,14 +127,16 @@ h2 {
 
 /* --- ESTILOS PARA FORM01.HTML --- */
 body.pagina-de-formulario { /* Adicionado para padding do header apenas se necessário */
+    padding-top: 0px; /* Espaço para o header fixo */
+    padding-bottom: 80px; /* Espaço para os botões de navegação fixos na parte inferior */
     /* padding-top: 110px;  Se o .main-header for usado ativamente no form01.html */
     /* Se o .main-header for display:none no mobile, esse padding-top também deverá ser 0 no mobile */
 }
 
 .site-logo-form01 {
     height: auto; /* Altura automática */
-    width: 200px; /* Tamanho base da logo */
-    max-width: 60%; /* Máximo da largura do container do formulário */
+    width: 300px; /* Tamanho base da logo */
+    max-width: 500px; /* Máximo da largura do container do formulário */
     display: block;
     margin: 0 auto 20px auto; /* Centralizada com margem inferior */
 }
@@ -324,16 +326,24 @@ button[type="submit"]:hover {
         padding: 15px; /* Padding interno geral */
         padding-bottom: 20px; /* Padding inferior normal, botões de navegação são fixos na viewport */
         border-radius: 20px;
+        padding-top: 90px; /* Espaço para o header fixo */
         
     }
 
-    .site-logo-form01 {
-        width: 55vw; /* Logo um pouco menor */
-        max-width: 160px; /* Limite máximo */
-        height: auto;
-        margin: 10px auto 15px auto; /* Margens ajustadas */
-        padding-top: 0;
-    }
+        .site-logo-form01 {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2000;
+            width: 55vw;
+            max-width: 160px;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 8px;
+            background: transparent;
+            /* Remove sombra ou borda se não quiser destaque extra */
+        }
 
     .titulo-dados {
         font-size: 1.15em;
