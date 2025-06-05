@@ -302,26 +302,17 @@ button[type="submit"]:hover {
 
     
     body.pagina-de-formulario {
-        padding-top: 0;
         padding-bottom: 75px;
-        
     }
 
     
     body:not(.pagina-de-formulario) {
         padding-top: 70px;
-        padding-bottom: 60px;
+        
         
     }
 
    
-    .main-header {
-        height: 60px;
-        padding: 5px 0;
-        background-color: rgba(250, 250, 250, 0.3);
-       
-        
-    }
 
     body.pagina-de-formulario .main-header {
         display: none;
@@ -330,26 +321,33 @@ button[type="submit"]:hover {
 
     /* Logo na Index.html Mobile */
     .site-logo-pagina1 {
-        height: auto;
-        max-height: 50px;
-        width: auto;
-        max-width: 180px;
-        object-fit: contain;
-        padding-top: 0;
-        border: none !important;
+        display: block;
+            margin: 80px auto 40px auto;
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border: none;
+            padding-top: 10px;
     }
 
     /* Conteúdo Principal da Index.html Mobile */
     .pagina-background-principal {
         margin-top: 10px;
+        min-height: 100vh;
+        margin-bottom: 0;
+        box-sizing: border-box;
+        padding-bottom: 80px;
         padding: 15px 5vw;
         width: auto;
+        height: 100%;
+        max-width: 100%;
     }
 
     /* Títulos Mobile */
     h2 {
         /* Para index.html */
-        font-size: 1.2em;
+        font-size: 0.90em;
         margin-bottom: 20px;
         margin-top: 5px;
     }
@@ -369,16 +367,17 @@ button[type="submit"]:hover {
     .navegacao-formularios a {
         font-size: 1em;
         padding: 12px 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
      
     }
 
     /* Logo no Formulário (form01.html) Mobile */
     .site-logo-form01 {
-        width: 45vw;
-        max-width: 160px;
-        height: auto;
+        width: 100%;
+        max-width: 600px
         margin: 10px auto 15px auto;
-        padding-top: 0;
+        
     }
 
     /* Container do Formulário (form01.html) Mobile */
@@ -421,33 +420,35 @@ button[type="submit"]:hover {
 
     /* Botão Enviar (form01.html) Mobile */
     button[type="submit"] {
-        width: 100%;
+        width: 30%;
         padding: 14px 15px;
         font-size: 1.05em;
         margin-top: 15px;
+
     }
 
     /* Botões de Navegação Inferior (form01.html) Mobile */
     .botoes-navegacao-inferior {
         position: fixed;
         bottom: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
         width: 100%;
-        background-color: #EFEFEF;
         padding: 10px 8px;
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
-        gap: 8px;
-        border-top: 1px solid #D0D0D0;
+        gap: 5px;
         z-index: 1001;
+        
     }
 
     .botoes-navegacao-inferior .botao-nav {
-        background-color: #333333;
+        
         color: #ffffff;
         padding: 10px 5px;
-        font-size: 0.85em;
+        font-size: 0.65em;
         flex-basis: 0;
         flex-grow: 1;
         width: auto;
@@ -461,16 +462,34 @@ button[type="submit"]:hover {
         align-items: center;
         justify-content: center;
         border: none;
+        
     
     }
 
     /* Rodapé Mobile */
     .rodape {
-        max-width: 100%;
-        border-radius: 0;
-        font-size: 0.8em;
-        padding: 8px 0;
-        z-index: 999;
+        position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 300px;
+            /* Um pouco menor */
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            /* Fundo escuro do rodapé */
+            border-radius: 20px 20px 0 0;
+            padding: 8px 0;
+            font-size: 0.85em;
+            color: #ffffff;
+            z-index: 999;
+            /* Abaixo dos botões de navegação mobile (1001) */
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
+            box-sizing: border-box;
+        }
+        
+        .rodape p {
+            margin: 0;
        
     }
 
