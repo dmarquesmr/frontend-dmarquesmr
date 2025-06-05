@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário FrontEnd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ <body class="pagina-de-formulario">
+
+    <header class="main-header">
+       
+    </header>
+   
+
+    <div class="container-formulario">
+        <img src="logohass.png" alt="Logo da Empresa" class="site-logo-form01">
+        <h3 class="titulo-dados">Preencha seus dados:</h3>
+
+        <div class="dados-pessoais-container">
+            <form class="form-centro" action="form01.html" method="post">
+                <div class="campo-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="contato">Contato:</label>
+                    <input type="tel" id="contato" name="contato" placeholder="(00) 0000-0000" pattern="\d{10,11}"  title="Digite apenas números, com DDD. Exemplo: 68999999999" 
+                    inputmode="numeric" required>
+                </div>
+                <button type="submit"><strong>Enviar</strong></button>
+                
+            </form>
+        </div>
+
+        <div class="botoes-navegacao-inferior">
+            <button class="botao-nav" onclick="window.location.href='index.html';">Voltar à Página Principal</button>
+            <button class="botao-nav" onclick="window.location.href='form02.html';">Próximo Formulário</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contato').addEventListener('input', function (e) {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 2 && v.length <= 7) {
+                v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+            } else if (v.length > 7) {
+                v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7, 11)}`;
+            }
+            e.target.value = v;
+        });
+    </script> 
+</body>
+</html>
